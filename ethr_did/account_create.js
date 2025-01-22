@@ -5,7 +5,7 @@ import fs from 'fs';
 const web3 = new Web3('http://localhost:8545');
 
 // 비밀번호 설정
-const password = '1234';
+const password = '1234'; // this value must set by using hash function DO NOT USE RAW USER PASSWORD
 const contractAddress = "0xb9679A4cEA94BaEE7491248c27171410d3d21923";
 const contractABI = JSON.parse(fs.readFileSync('/home/latteisacat/ethr_did/truffle/build/contracts/EthereumDIDRegistry.json', 'utf-8')).abi;
 const contract = new web3.eth.Contract(contractABI, contractAddress);
@@ -34,12 +34,12 @@ async function createAccount() {
         console.log(`30 ETH successfully sent to ${newAccount}`);
         console.log("Transaction receipt for ETH transfer:", txReceipt);
 
-        await contract.methods.changeOwner(newAccount, newAccount).send({
+        await contract.methods.changeOwner(newAccount, adminAccount).send({
             from: newAccount,
             gasPrice : await web3.eth.getGasPrice(),
             gas: 300000
         });
-        console.log(`DID ownership set for account: ${newAccount}`);
+        console.log(`DID ownership set for account: ${adminAccount}`);
     } catch (error) {
         console.error("Error creating account: ", error);
     }
