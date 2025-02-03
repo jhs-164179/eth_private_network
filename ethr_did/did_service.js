@@ -32,9 +32,7 @@ async function findKeystoreFile(accountAddress) {
         const targetFile = files.find(file => file.includes(accountAddress.toLowerCase().replace('0x', '')));
         if (!targetFile) return null;
 
-        const filePath = path.join(keystoreDir, targetFile);
-        const keystoreContent = fs.readFileSync(filePath, 'utf-8');
-        return JSON.parse(keystoreContent);
+        return { path: path.join(keystoreDir, targetFile), filename: targetFile };
     } catch (error) {
         console.error("Error finding keystore file:", error);
         return null;
@@ -65,55 +63,13 @@ async function createDidAccount(password) {
             gas: 300000
         });
 
-        const keystore = await findKeystoreFile(newAccount);
-        return {
-            did: `did:ethr:${newAccount}`,
-            keystore,
-            publicKey: keystore?.address || null
-        };
+        const keystoreFile = await findKeystoreFile(newAccount);
+        if (!keystoreFile) throw new Error("Keystore file not found");
+
+        return keystoreFile;
     } catch (error) {
         console.error("Error creating DID account:", error);
         throw error;
-    }
-}
-
-// DID 검증
-async function isDidRegistered(identifier) {
-    try {
-        const owner = await contract.methods.identityOwner(identifier).call();
-        if (owner.toUpperCase() === invalidOwner.toUpperCase()) return false;
-
-        const pastEvents = await contract.getPastEvents('DIDOwnerChanged', {
-            filter: { identity: identifier },
-            fromBlock: 0,
-            toBlock: 'latest',
-        });
-
-        return pastEvents.length > 0;
-    } catch (error) {
-        console.error("Error verifying DID:", error);
-        return false;
-    }
-}
-
-// DID 문서 확인
-async function resolveDidDocument(did) {
-    const ethrDidResolver = getResolver({
-        networks: [{
-            name: "devnet",
-            rpcUrl: rpcUrl,
-            chainId: chainNameOrId,
-            registry: contractAddress,
-        }]
-    });
-    const didResolver = new Resolver(ethrDidResolver);
-
-    try {
-        const result = await didResolver.resolve(did);
-        return result?.didDocument || null;
-    } catch (error) {
-        console.error("Error resolving DID document:", error);
-        return null;
     }
 }
 
@@ -122,32 +78,13 @@ app.use(express.json());
 
 app.post('/create-did', async (req, res) => {
     const { password } = req.body;
-    if (!password) return res.status(400).send({ error: 'Password is required' });
+    if (!password) return res.status(400).json({ error: 'Password is required' });
 
     try {
-        const result = await createDidAccount(password);
-        res.status(200).send(result);
+        const keystoreFile = await createDidAccount(password);
+        res.download(keystoreFile.path, keystoreFile.filename);
     } catch (error) {
-        res.status(500).send({ error: error.message });
-    }
-});
-
-app.get('/verify-did', async (req, res) => {
-    const { did } = req.query;
-    if (!did) return res.status(400).send({ error: 'DID is required' });
-
-    try {
-        const identifier = did.split(':').pop(); // DID에서 identifier 추출
-        const isRegistered = await isDidRegistered(identifier);
-        const didDocument = await resolveDidDocument(did);
-
-        res.status(200).send({
-            did,
-            isRegistered,
-            didDocument
-        });
-    } catch (error) {
-        res.status(500).send({ error: error.message });
+        res.status(500).json({ error: error.message });
     }
 });
 
@@ -155,4 +92,3 @@ app.get('/verify-did', async (req, res) => {
 app.listen(port, '0.0.0.0', () => {
     console.log(`DID service running at http://0.0.0.0:${port}`);
 });
-
