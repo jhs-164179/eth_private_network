@@ -73,6 +73,46 @@ async function createDidAccount(password) {
     }
 }
 
+// DID 검증
+async function isDidRegistered(identifier) {
+    try {
+        const owner = await contract.methods.identityOwner(identifier).call();
+        if (owner.toUpperCase() === invalidOwner.toUpperCase()) return false;
+
+        const pastEvents = await contract.getPastEvents('DIDOwnerChanged', {
+            filter: { identity: identifier },
+            fromBlock: 0,
+            toBlock: 'latest',
+        });
+
+        return pastEvents.length > 0;
+    } catch (error) {
+        console.error("Error verifying DID:", error);
+        return false;
+    }
+}
+
+// DID 문서 확인
+async function resolveDidDocument(did) {
+    const ethrDidResolver = getResolver({
+        networks: [{
+            name: "devnet",
+            rpcUrl: rpcUrl,
+            chainId: chainNameOrId,
+            registry: contractAddress,
+        }]
+    });
+    const didResolver = new Resolver(ethrDidResolver);
+
+    try {
+        const result = await didResolver.resolve(did);
+        return result?.didDocument || null;
+    } catch (error) {
+        console.error("Error resolving DID document:", error);
+        return null;
+    }
+}
+
 // Express 엔드포인트
 app.use(express.json());
 
@@ -83,6 +123,25 @@ app.post('/create-did', async (req, res) => {
     try {
         const keystoreFile = await createDidAccount(password);
         res.download(keystoreFile.path, keystoreFile.filename);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.get('/verify-did', async (req, res) => {
+    const { did } = req.query;
+    if (!did) return res.status(400).json({ error: 'DID is required' });
+
+    try {
+        const identifier = did.split(':').pop(); // DID에서 identifier 추출
+        const isRegistered = await isDidRegistered(identifier);
+        const didDocument = await resolveDidDocument(did);
+
+        res.status(200).json({
+            did,
+            isRegistered,
+            didDocument
+        });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
