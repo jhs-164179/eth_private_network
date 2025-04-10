@@ -1,0 +1,115 @@
+INFO [04-10|16:39:46.766] Maximum peer count                       ETH=50 total=50
+INFO [04-10|16:39:46.775] Smartcard socket not found, disabling    err="stat /run/pcscd/pcscd.comm: no such file or directory"
+INFO [04-10|16:39:46.779] Set global gas cap                       cap=50,000,000
+INFO [04-10|16:39:46.779] Initializing the KZG library             backend=gokzg
+INFO [04-10|16:39:46.907] Allocated trie memory caches             clean=154.00MiB dirty=256.00MiB
+INFO [04-10|16:39:46.907] Using pebble as the backing database
+INFO [04-10|16:39:46.907] Allocated cache and file handles         database=/root/eth_private_network/ethr_did/genesis/geth/chaindata cache=512.00MiB handles=524,288
+INFO [04-10|16:39:46.920] Opened ancient database                  database=/root/eth_private_network/ethr_did/genesis/geth/chaindata/ancient/chain readonly=false
+INFO [04-10|16:39:46.920] State scheme set to already existing     scheme=hash
+INFO [04-10|16:39:46.920] Initialising Ethereum protocol           network=1343 dbversion=8
+INFO [04-10|16:39:46.921] 
+INFO [04-10|16:39:46.921] ---------------------------------------------------------------------------------------------------------------------------------------------------------
+INFO [04-10|16:39:46.921] Chain ID:  1343 (unknown)
+INFO [04-10|16:39:46.921] Consensus: Clique (proof-of-authority)
+INFO [04-10|16:39:46.921] 
+INFO [04-10|16:39:46.921] Pre-Merge hard forks (block based):
+INFO [04-10|16:39:46.921]  - Homestead:                   #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/homestead.md)
+INFO [04-10|16:39:46.921]  - Tangerine Whistle (EIP 150): #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/tangerine-whistle.md)
+INFO [04-10|16:39:46.921]  - Spurious Dragon/1 (EIP 155): #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/spurious-dragon.md)
+INFO [04-10|16:39:46.921]  - Spurious Dragon/2 (EIP 158): #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/spurious-dragon.md)
+INFO [04-10|16:39:46.921]  - Byzantium:                   #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/byzantium.md)
+INFO [04-10|16:39:46.921]  - Constantinople:              #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/constantinople.md)
+INFO [04-10|16:39:46.921]  - Petersburg:                  #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/petersburg.md)
+INFO [04-10|16:39:46.921]  - Istanbul:                    #<nil> (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/istanbul.md)
+INFO [04-10|16:39:46.921]  - Berlin:                      #<nil> (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/berlin.md)
+INFO [04-10|16:39:46.921]  - London:                      #<nil> (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/london.md)
+INFO [04-10|16:39:46.921] 
+INFO [04-10|16:39:46.921] The Merge is not yet available for this network!
+INFO [04-10|16:39:46.921]  - Hard-fork specification: https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/paris.md
+INFO [04-10|16:39:46.921] 
+INFO [04-10|16:39:46.921] Post-Merge hard forks (timestamp based):
+INFO [04-10|16:39:46.921] 
+INFO [04-10|16:39:46.921] ---------------------------------------------------------------------------------------------------------------------------------------------------------
+INFO [04-10|16:39:46.921] 
+INFO [04-10|16:39:46.921] Loaded most recent local block           number=1326 hash=194a02..377d61 td=2653 age=7m30s
+INFO [04-10|16:39:46.957] Initialized transaction indexer          range="last 2350000 blocks"
+INFO [04-10|16:39:46.958] Loaded local transaction journal         transactions=0 dropped=0
+WARN [04-10|16:39:46.984] Switch sync mode from snap sync to full sync reason="snap sync complete"
+INFO [04-10|16:39:46.984] Gasprice oracle is ignoring threshold set threshold=2
+WARN [04-10|16:39:46.986] Unclean shutdown detected                booted=2025-04-10T16:31:49+0900 age=7m57s
+WARN [04-10|16:39:46.986] Unclean shutdown detected                booted=2025-04-10T16:31:57+0900 age=7m49s
+WARN [04-10|16:39:46.986] Unclean shutdown detected                booted=2025-04-10T16:32:35+0900 age=7m11s
+WARN [04-10|16:39:46.986] Engine API enabled                       protocol=eth
+WARN [04-10|16:39:46.986] Engine API started but chain not configured for merge yet
+INFO [04-10|16:39:46.986] Starting peer-to-peer node               instance=Geth/v1.13.15-stable-c5ba367e/linux-amd64/go1.21.6
+INFO [04-10|16:39:47.022] New local node record                    seq=1,744,263,657,417 id=74f5e9b7a468c48b ip=127.0.0.1 udp=30303 tcp=30303
+INFO [04-10|16:39:47.024] IPC endpoint opened                      url=/root/eth_private_network/ethr_did/genesis/geth.ipc
+INFO [04-10|16:39:47.024] Loaded JWT secret file                   path=/root/eth_private_network/ethr_did/genesis/geth/jwtsecret crc32=0xaf75f662
+INFO [04-10|16:39:47.024] HTTP server started                      endpoint=0.0.0.0:8545 auth=false prefix= cors= vhosts=localhost
+INFO [04-10|16:39:47.025] Started P2P networking                   self=enode://1171b0c704141aba20be37cae150c4e15cff38236baf276ef60a514eef1ee646dcd08cc3401485a8d0b22ec6e3299af7238df7ba13d05c30e1bc746877cc5773@127.0.0.1:30303
+INFO [04-10|16:39:47.025] WebSocket enabled                        url=ws://127.0.0.1:8551
+INFO [04-10|16:39:47.025] HTTP server started                      endpoint=127.0.0.1:8551 auth=true  prefix= cors=localhost vhosts=localhost
+INFO [04-10|16:39:48.341] Unlocked account                         address=0xe3FaBefAEA7717A386243c57f74Af8BCCe4CA3fC
+INFO [04-10|16:39:48.341] Legacy pool tip threshold updated        tip=0
+INFO [04-10|16:39:48.341] Legacy pool tip threshold updated        tip=1,000,000,000
+INFO [04-10|16:39:48.341] Commit new sealing work                  number=1327 sealhash=aaf491..02a1c2 txs=0 gas=0 fees=0 elapsed="140.997µs"
+INFO [04-10|16:39:48.345] Successfully sealed new block            number=1327 sealhash=aaf491..02a1c2 hash=552446..d29e64 elapsed=3.481ms
+INFO [04-10|16:39:48.345] Commit new sealing work                  number=1328 sealhash=019e06..5a0c1b txs=0 gas=0 fees=0 elapsed="315.383µs"
+INFO [04-10|16:39:49.485] New local node record                    seq=1,744,263,657,418 id=74f5e9b7a468c48b ip=211.188.54.133 udp=30303 tcp=30303
+INFO [04-10|16:39:53.003] Successfully sealed new block            number=1328 sealhash=019e06..5a0c1b hash=98df8a..fd7926 elapsed=4.657s
+INFO [04-10|16:39:53.003] Commit new sealing work                  number=1329 sealhash=9ff5af..5fadf1 txs=0 gas=0 fees=0 elapsed="334.793µs"
+INFO [04-10|16:39:58.004] Successfully sealed new block            number=1329 sealhash=9ff5af..5fadf1 hash=6a453e..a65d70 elapsed=5.000s
+INFO [04-10|16:39:58.004] Commit new sealing work                  number=1330 sealhash=7e9a64..05e9d8 txs=0 gas=0 fees=0 elapsed="276.152µs"
+INFO [04-10|16:40:03.010] Successfully sealed new block            number=1330 sealhash=7e9a64..05e9d8 hash=2b670b..c5cb0d elapsed=5.005s
+INFO [04-10|16:40:03.010] Commit new sealing work                  number=1331 sealhash=e1b7fc..ed1949 txs=0 gas=0 fees=0 elapsed="224.939µs"
+INFO [04-10|16:40:07.164] Looking for peers                        peercount=0 tried=55 static=0
+INFO [04-10|16:40:08.005] Successfully sealed new block            number=1331 sealhash=e1b7fc..ed1949 hash=fb02e4..72d1aa elapsed=4.995s
+INFO [04-10|16:40:08.006] Commit new sealing work                  number=1332 sealhash=55553e..1a5975 txs=0 gas=0 fees=0 elapsed="292.547µs"
+INFO [04-10|16:40:13.002] Successfully sealed new block            number=1332 sealhash=55553e..1a5975 hash=8f50a0..eec4e3 elapsed=4.996s
+INFO [04-10|16:40:13.003] Commit new sealing work                  number=1333 sealhash=4cb5b9..e51daa txs=0 gas=0 fees=0 elapsed="352.061µs"
+INFO [04-10|16:40:17.331] Looking for peers                        peercount=0 tried=25 static=0
+INFO [04-10|16:40:18.003] Successfully sealed new block            number=1333 sealhash=4cb5b9..e51daa hash=f340d4..2b49cc elapsed=5.000s
+INFO [04-10|16:40:18.003] Commit new sealing work                  number=1334 sealhash=56f5bb..bb3b82 txs=0 gas=0 fees=0 elapsed="235.717µs"
+INFO [04-10|16:40:23.003] Successfully sealed new block            number=1334 sealhash=56f5bb..bb3b82 hash=df95a4..70ca5f elapsed=4.999s
+INFO [04-10|16:40:23.003] Commit new sealing work                  number=1335 sealhash=ad7a85..28cff2 txs=0 gas=0 fees=0 elapsed="261.508µs"
+INFO [04-10|16:40:27.719] Looking for peers                        peercount=0 tried=24 static=0
+INFO [04-10|16:40:28.003] Successfully sealed new block            number=1335 sealhash=ad7a85..28cff2 hash=60bb32..648da9 elapsed=4.999s
+INFO [04-10|16:40:28.003] Commit new sealing work                  number=1336 sealhash=4c64de..639464 txs=0 gas=0 fees=0 elapsed="296.044µs"
+INFO [04-10|16:40:33.003] Successfully sealed new block            number=1336 sealhash=4c64de..639464 hash=ebafb9..6b3abf elapsed=4.999s
+INFO [04-10|16:40:33.003] Commit new sealing work                  number=1337 sealhash=e12c23..bfeb85 txs=0 gas=0 fees=0 elapsed="319.262µs"
+INFO [04-10|16:40:38.004] Successfully sealed new block            number=1337 sealhash=e12c23..bfeb85 hash=1bbe01..c1b8c8 elapsed=5.000s
+INFO [04-10|16:40:38.004] Commit new sealing work                  number=1338 sealhash=aea1c6..08c0de txs=0 gas=0 fees=0 elapsed="269.444µs"
+INFO [04-10|16:40:38.051] Looking for peers                        peercount=0 tried=59 static=0
+INFO [04-10|16:40:43.003] Successfully sealed new block            number=1338 sealhash=aea1c6..08c0de hash=4ece0a..729309 elapsed=4.998s
+INFO [04-10|16:40:43.003] Commit new sealing work                  number=1339 sealhash=02c178..40b297 txs=0 gas=0 fees=0 elapsed="423.263µs"
+INFO [04-10|16:40:48.003] Successfully sealed new block            number=1339 sealhash=02c178..40b297 hash=cbf707..dc521a elapsed=5.000s
+INFO [04-10|16:40:48.003] Commit new sealing work                  number=1340 sealhash=6c31ee..dc88b8 txs=0 gas=0 fees=0 elapsed="284.533µs"
+INFO [04-10|16:40:48.254] Looking for peers                        peercount=0 tried=42 static=0
+INFO [04-10|16:40:53.003] Successfully sealed new block            number=1340 sealhash=6c31ee..dc88b8 hash=5071d0..be1287 elapsed=4.999s
+INFO [04-10|16:40:53.003] Commit new sealing work                  number=1341 sealhash=be823f..0ee7bf txs=0 gas=0 fees=0 elapsed="246.919µs"
+INFO [04-10|16:40:58.003] Successfully sealed new block            number=1341 sealhash=be823f..0ee7bf hash=f332ee..bffb3d elapsed=4.999s
+INFO [04-10|16:40:58.003] Commit new sealing work                  number=1342 sealhash=a708aa..a63615 txs=0 gas=0 fees=0 elapsed="263.612µs"
+INFO [04-10|16:41:00.515] Looking for peers                        peercount=0 tried=35 static=0
+INFO [04-10|16:41:03.003] Successfully sealed new block            number=1342 sealhash=a708aa..a63615 hash=cab042..705ad5 elapsed=4.999s
+INFO [04-10|16:41:03.004] Commit new sealing work                  number=1343 sealhash=e152cc..e90266 txs=0 gas=0 fees=0 elapsed="428.349µs"
+INFO [04-10|16:41:08.004] Successfully sealed new block            number=1343 sealhash=e152cc..e90266 hash=d16fd0..cee093 elapsed=5.000s
+INFO [04-10|16:41:08.004] Commit new sealing work                  number=1344 sealhash=2484e2..a8a490 txs=0 gas=0 fees=0 elapsed="366.366µs"
+INFO [04-10|16:41:10.997] Looking for peers                        peercount=0 tried=57 static=0
+INFO [04-10|16:41:13.003] Successfully sealed new block            number=1344 sealhash=2484e2..a8a490 hash=a1ebf2..17c6f0 elapsed=4.998s
+INFO [04-10|16:41:13.004] Commit new sealing work                  number=1345 sealhash=8be009..18d5c2 txs=0 gas=0 fees=0 elapsed="352.067µs"
+INFO [04-10|16:41:18.004] Successfully sealed new block            number=1345 sealhash=8be009..18d5c2 hash=d24314..e899c9 elapsed=4.999s
+INFO [04-10|16:41:18.004] Commit new sealing work                  number=1346 sealhash=5ee523..af0acd txs=0 gas=0 fees=0 elapsed="306.509µs"
+INFO [04-10|16:41:21.052] Looking for peers                        peercount=0 tried=17 static=0
+INFO [04-10|16:41:23.003] Successfully sealed new block            number=1346 sealhash=5ee523..af0acd hash=476985..70658f elapsed=4.998s
+INFO [04-10|16:41:23.003] Commit new sealing work                  number=1347 sealhash=9a3057..e4f90b txs=0 gas=0 fees=0 elapsed="270.413µs"
+INFO [04-10|16:41:28.007] Successfully sealed new block            number=1347 sealhash=9a3057..e4f90b hash=4fc7db..e86945 elapsed=5.004s
+INFO [04-10|16:41:28.007] Commit new sealing work                  number=1348 sealhash=c7bdfa..7182ef txs=0 gas=0 fees=0 elapsed="241.294µs"
+INFO [04-10|16:41:31.252] Looking for peers                        peercount=0 tried=59 static=0
+INFO [04-10|16:41:33.006] Successfully sealed new block            number=1348 sealhash=c7bdfa..7182ef hash=6b7b76..597de5 elapsed=4.998s
+INFO [04-10|16:41:33.006] Commit new sealing work                  number=1349 sealhash=5497e2..57af43 txs=0 gas=0 fees=0 elapsed="232.05µs"
+INFO [04-10|16:41:38.004] Successfully sealed new block            number=1349 sealhash=5497e2..57af43 hash=d79249..8e1795 elapsed=4.997s
+INFO [04-10|16:41:38.004] Commit new sealing work                  number=1350 sealhash=d6cd49..1814f4 txs=0 gas=0 fees=0 elapsed="235.361µs"
+INFO [04-10|16:41:42.181] Looking for peers                        peercount=0 tried=45 static=0
+INFO [04-10|16:41:43.003] Successfully sealed new block            number=1350 sealhash=d6cd49..1814f4 hash=6b3695..778bfc elapsed=4.998s
+INFO [04-10|16:41:43.003] Commit new sealing work                  number=1351 sealhash=e8d29f..cd78dc txs=0 gas=0 fees=0 elapsed="257.479µs"

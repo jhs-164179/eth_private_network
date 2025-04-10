@@ -1,5 +1,5 @@
 {
-  "type" : "module",
+  "type": "module",
   "dependencies": {
     "did-jwt": "^8.0.4",
     "did-resolver": "^4.1.0",
@@ -7,6 +7,7 @@
     "ethers": "^6.13.4",
     "ethr-did": "^3.0.21",
     "ethr-did-resolver": "^11.0.2",
+    "express": "^5.1.0",
     "hardhat": "^2.22.15",
     "solc": "^0.8.28",
     "web3": "^4.13.0"

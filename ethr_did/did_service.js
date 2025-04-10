@@ -7,21 +7,23 @@ import { getResolver } from 'ethr-did-resolver';
 import { ethers } from 'ethers';
 
 const app = express();
-const port = 3000;
+const port = 80;
 
 const web3 = new Web3('http://localhost:8545');
 
 // 관리자 계정 및 비밀번호
-const adminAccount = "0x4b824A394372747f56fA9ba40E2341Fd46d52573";
+// const adminAccount = "0x4b824A394372747f56fA9ba40E2341Fd46d52573";
+const adminAccount = "0xe3FaBefAEA7717A386243c57f74Af8BCCe4CA3fC";
 const adminPassword = "1234";
 
 // 컨트랙트 초기화
-const contractAddress = "0xc10023F83d567046706f42480f5BfB4eb933a259";
-const contractABI = JSON.parse(fs.readFileSync('/home/dnslab11/ethr_did/truffle/build/contracts/EthereumDIDRegistry.json', 'utf-8')).abi;
+// const contractAddress = "0xc10023F83d567046706f42480f5BfB4eb933a259";
+const contractAddress = "0xc21f81d790C538C10E09c1d46BCA2AFb4cA427d2";
+const contractABI = JSON.parse(fs.readFileSync('./truffle/build/contracts/EthereumDIDRegistry.json', 'utf-8')).abi;
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
-const keystoreDir = '/home/dnslab11/ethr_did/genesis/keystore';
-const chainNameOrId = 1344;
+const keystoreDir = './genesis/keystore';
+const chainNameOrId = 1343;
 const rpcUrl = "http://localhost:8545";
 const invalidOwner = "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF";
 
