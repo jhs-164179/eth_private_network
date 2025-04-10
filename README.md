@@ -80,11 +80,14 @@ geth version
 
 ### install node packages
 ```bash
-mkdir my-did-project
-cd my-did-project
+mkdir ethr_did
+cd ethr_did
 npm init -y
 ```
 ```bash
+# install automatically (based on package.json file)
+npm install
+# install manually
 npm install did-jwt@^8.0.4 \
             did-resolver@^4.1.0 \
             ethereumjs-wallet@^1.0.2 \
