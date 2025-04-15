@@ -7,18 +7,16 @@ import { getResolver } from 'ethr-did-resolver';
 import { ethers } from 'ethers';
 
 const app = express();
-const port = 80;
+const port = 80; // 포트포워딩에 따라 상이
 
 const web3 = new Web3('http://localhost:8545');
 
 // 관리자 계정 및 비밀번호
-// const adminAccount = "0x4b824A394372747f56fA9ba40E2341Fd46d52573";
-const adminAccount = "0xe3FaBefAEA7717A386243c57f74Af8BCCe4CA3fC";
+const adminAccount = "0xe3FaBefAEA7717A386243c57f74Af8BCCe4CA3fC"; // geth에 포함된 계정 (메뉴얼 참고) | 변경시 genesis.json -> extradata, alloc 수정해야 함
 const adminPassword = "1234";
 
 // 컨트랙트 초기화
-// const contractAddress = "0xc10023F83d567046706f42480f5BfB4eb933a259";
-const contractAddress = "0xc21f81d790C538C10E09c1d46BCA2AFb4cA427d2";
+const contractAddress = "0xc21f81d790C538C10E09c1d46BCA2AFb4cA427d2"; // 최초 실행 시 truffle 배포된 주소 (메뉴얼 참고)
 const contractABI = JSON.parse(fs.readFileSync('./truffle/build/contracts/EthereumDIDRegistry.json', 'utf-8')).abi;
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
