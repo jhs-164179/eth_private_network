@@ -99,3 +99,10 @@ npm install did-jwt@^8.0.4 \
             solc@^0.8.28 \
             web3@^4.13.0 \
 ```
+
+
+# run (assuming that already smart contract is deployed)
+```bash
+chmod +x /root/eth_private_network/ethr_did/run.sh
+bash /root/eth_private_network/ethr_did/run.sh
+```

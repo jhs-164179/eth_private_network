@@ -26,13 +26,13 @@ nohup geth --datadir ./genesis \
 # Geth 준비 상태 확인 (최대 30초 대기)
 echo "Waiting for Geth RPC (localhost:8545)..."
 for i in {1..30}; do
-    nc -z localhost 8545 && echo "✅ Geth RPC is ready!" && break
+    nc -z localhost 8545 && echo "Geth RPC is ready!" && break
     sleep 1
 done
 
 # 포트가 열리지 않았다면 종료
 if ! nc -z localhost 8545; then
-    echo "❌ Geth RPC did not start within timeout. Check geth.log for issues."
+    echo "Geth RPC did not start within timeout. Check geth.log for issues."
     exit 1
 fi
 
