@@ -76,6 +76,7 @@ async function createDidAccount(password) {
 // DID 검증
 async function isDidRegistered(identifier) {
     try {
+        console.log("Checking identifier: ", identifier);
         const owner = await contract.methods.identityOwner(identifier).call();
         if (owner.toUpperCase() === invalidOwner.toUpperCase()) return false;
 
@@ -106,6 +107,8 @@ async function resolveDidDocument(did) {
 
     try {
         const result = await didResolver.resolve(did);
+        // log 추가
+        console.log("DID verified: ", result);
         return result?.didDocument || null;
     } catch (error) {
         console.error("Error resolving DID document:", error);
